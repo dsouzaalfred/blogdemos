@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Add textboxes</title>
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script><!-- jQuery CDN -->
+        <style><!-- Some styling for the textboxes -->
+            .magic-text-box {
+                display: block;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+        </style>
+	</head>
+	<body>
+        <h1>Add Textboxes</h1>
+		<h3>Link to blog post :</h3> <a href="http://dsouzaalf.red/dynamically-add-content-to-dom-using-jquery/">Dynamically Add content to DOM using jQuery</a>
+		<div id="div-add-textbox-here"><!-- Empty div : we will add textboxes inside this div -->
+			
+		</div>
+		<button id="btn-add-textbox">Add Textbox</button><!-- On Click on this button we will add textboxes to the div -->
+        
+        <script>
+            $(document).ready(function(){//When document is ready, do the following :
+                $('#btn-add-textbox').on('click',function(event){//On button click do the following :
+                    if( $('#div-add-textbox-here').find('input').length < 10 ){//Check the number of input boxes, if number is less than 10 then
+                        var textValue = $('#div-add-textbox-here').find('input').length + 1 //Textbox value will be number of textboxes already plus one
+                        $('#div-add-textbox-here').append('<input type="text" class="magic-text-box" value="'+textValue+'" />');//Append the textbox to the div
+                    }
+                });
+            });
+        </script>
+	</body>
+</html>

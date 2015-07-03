@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Add textboxes</title>
+        <style><!-- Some styling for the textboxes -->
+            .magic-text-box {
+                display: block;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+        </style>
+	</head>
+	<body>
+        <h1>Add Textboxes</h1>
+		<h3>Link to blog post :</h3> <a href="http://dsouzaalf.red/dynamically-add-content-to-dom-using-javascript/">Dynamically Add content to DOM using JavaScript</a>
+		<div id="div-add-textbox-here"><!-- Empty div : we will add textboxes inside this div -->
+			
+		</div>
+		<button id="btn-add-textbox">Add Textbox</button><!-- On Click on this button we will add textboxes to the div -->
+        
+        <script>
+            (function(){//When the document is ready execute this function.
+                var getButton = document.getElementById('btn-add-textbox');//Get the button
+                getButton.addEventListener('click', function(){//Add an event listener and listen for a click
+                    var getDiv = document.getElementById('div-add-textbox-here');//get the div
+                    if( getDiv.children.length < 10 ){//check if number of children inside div is less than 10
+                        var newInput = document.createElement('input');//Create an input element 
+                        newInput.type = "text";//give it the type text
+                        newInput.className = "magic-text-box";//And a class
+                        newInput.value = getDiv.children.length + 1;//value will be number of textboxes already plus one
+
+                        getDiv.appendChild(newInput);//Append the textbox to the div
+                    }
+                });
+            })();
+        </script>
+	</body>
+</html>
