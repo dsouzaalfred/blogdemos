@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<title>Remove textboxes</title>
+        <script src='http://code.jquery.com/jquery-2.1.4.min.js'></script>
+        <style>
+            .magic-text-box {
+                display: block;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+        </style>
+	</head>
+	<body>
+		<div id='div-textbox-here'>
+			<input type='text' class='magic-text-box' value="1" />
+            <input type='text' class='magic-text-box' value="2" />
+            <input type='text' class='magic-text-box' value="3" />
+			<input type='text' class='magic-text-box' value="4" />
+		</div>
+		<button id='btn-remove-textbox'>Remove Textbox</button>
+        <script>
+            $('#btn-remove-textbox').on('click',function(event){
+                if( $('#div-textbox-here').find('input').length > 1 ){
+                    $('#div-textbox-here').find('input').first().remove();
+                }
+            });
+        </script>
+	</body>
+</html>
