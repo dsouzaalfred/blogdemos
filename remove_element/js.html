@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<title>Remove textboxes</title>
+        <style>
+            .magic-text-box {
+                display: block;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+        </style>
+	</head>
+	<body>
+        <h1>Remove Textboxes</h1>
+		<div id='div-textbox-here'>
+			<input type='text' class='magic-text-box' value="1" />
+            <input type='text' class='magic-text-box' value="2" />
+            <input type='text' class='magic-text-box' value="3" />
+			<input type='text' class='magic-text-box' value="4" />
+		</div>
+		<button id='btn-remove-textbox'>Remove Textbox</button>
+        <script>
+            (function(){
+                var getButton = document.getElementById('btn-remove-textbox');
+                getButton.addEventListener('click',function(){
+                    var getDiv = document.getElementById('div-textbox-here');
+                    var getInputs = getDiv.getElementsByClassName('magic-text-box');
+                    if( getInputs.length > 1 ){
+                        getDiv.removeChild(getInputs[0]);
+                    }
+                });
+            })();
+        </script>
+	</body>
+</html>
