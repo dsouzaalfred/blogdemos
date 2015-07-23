@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Add Remove Text-boxes</title>
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <style>
+            .magic-text-box {
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+            .remove-textbox {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Add Remove Text-boxes</h1>
+        <button id="btn-add-textbox">Add Textbox</button>
+        <div id="div-add-remove">
+        
+        </div>
+        
+        <script>
+            $(document).ready(function(){
+                var inputTemplate = '<div>';
+                inputTemplate += '<input type="text" class="magic-text-box" />';
+                inputTemplate += ' <span class="remove-textbox">x</span>';
+                inputTemplate += '</div>';
+                $('#btn-add-textbox').on('click',function(event){
+                    if( $('#div-add-remove').find('div').length < 10 ){
+                        $('#div-add-remove').append(inputTemplate);
+                    }
+                });
+            });
+            $('#div-add-remove').on('click','.remove-textbox', function(){
+                if( $('#div-add-remove').find('div').length > 1 ){
+                    $(this).parent('div').remove();
+                }
+            });
+        </script>
+    </body>
+</html>
