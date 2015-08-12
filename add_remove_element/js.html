@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Add Remove Text-boxes</title>
+        <style>
+            .magic-text-box {
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+            .remove-textbox {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <H1>Add Remove Text-boxes</H1>
+        <button id="btn-add-textbox">Add Textbox</button>
+        <div id="div-add-remove">
+        
+        </div>
+        
+        <script>
+            (function(){
+                var getButton = document.getElementById('btn-add-textbox');
+                var getDiv = document.getElementById('div-add-remove');
+                getButton.addEventListener('click',function(e){
+                    if( getDiv.getElementsByClassName('magic-div').length < 10 ){
+                        var divToAdd = document.createElement('div');
+                        divToAdd.className = 'magic-div';
+                        var inputToAdd = document.createElement('input');
+                        inputToAdd.type = 'text';
+                        inputToAdd.className = 'magic-text-box';
+                        inputToAdd.value = getDiv.getElementsByClassName('magic-div').length + 1;
+                        var spanToAdd = document.createElement('span');
+                        spanToAdd.className = 'remove-textbox';
+                        spanToAdd.innerHTML  = ' x';
+                        divToAdd.appendChild(inputToAdd);
+                        divToAdd.appendChild(spanToAdd);
+                        getDiv.appendChild(divToAdd);
+                    }
+                    
+                });
+                
+                getDiv.addEventListener('click',function(e){
+                    if( e.target.className == 'remove-textbox' ) {
+                        if( getDiv.getElementsByClassName('magic-div').length > 1 ){
+                            var getParentElement = e.target.parentElement;
+                            getParentElement.remove();
+                        }
+                    }
+                });
+                
+            })();
+        </script>
+    </body>
+</html>
