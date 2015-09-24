@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<title>Javascript Long Int</title>
+		<meta charset="utf-8">
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<style>
+			.magic-text-box {
+				margin-bottom: 10px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>Number 1: <input name="Number1" class="magic-text-box" type="text" id="textbox1"><br />
+			Number 2: <input name="Number2" class="magic-text-box"  type="text" id="textbox2"><br />
+			<button id="sub-num">Subtract</button></p>
+			<p>Answer : <input class="magic-text-box"  type="text" id="textbox3"></p>
+		</div>
+		<script>
+			$(document).ready(function(){
+				$('#sub-num').on('click',function(event){
+					var num1 =  $.trim( $('#textbox1').val() );
+					var num2 =  $.trim( $('#textbox2').val() );
+					if (num1.length < 19) {
+						alert('Number 1 should be 19 digits');
+						return;
+					}
+					if (num2.length < 19) {
+						alert('Number 1 should be 19 digits');
+						return;
+					}
+					$('#textbox3').val( subNums( num1, num2 ) );
+				});
+			});
+			function subNums( startVal, endVal ){
+				var newStartVal = '', newEndVal = '';
+				for( var i = 0; i < endVal.length; i++ ){
+					if( startVal[i] != endVal[i] ){
+						newStartVal = startVal.substring(i,startVal.length);
+						newEndVal = endVal.substring(i,endVal.length);
+						return ( Math.abs( newEndVal - newStartVal ) );
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
