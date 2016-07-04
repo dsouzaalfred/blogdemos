@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <title>Fetching Data In Angularjs</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-app="fetchDataApp">
+        <b>Fetching Data In Angularjs</b>
+        <ol>
+            <li><a href="#/dataincontroller">Data In Controller</a></li>
+            <li>Data In Service</li>
+            <li>Data In A JSON File Accessed From Controller</li>
+            <li>Data In A JSON File Accessed From Service</li>
+            <li>API Call</li>
+            <li>Resolve</li>
+        </ol>
+        <div ng-view></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.5.3/angular-route.min.js"></script>
+        <script src="appModule.js"></script>
+        <script src="modules/dataInController/dicController.js"></script>
+    </body>
+</html>
