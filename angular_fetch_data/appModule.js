@@ -1,7 +1,8 @@
 var fetchDataApp = angular.module('fetchDataApp', [
 	'ngRoute',
 	'dataInControllerCntrl',
-	'dataInServiceCntrl'
+	'dataInServiceCntrl',
+	'dataInJsonCntrl'
 ]);
 fetchDataApp.config(['$routeProvider', function($routeProvider){
 	$routeProvider.
@@ -12,5 +13,9 @@ fetchDataApp.config(['$routeProvider', function($routeProvider){
 	.when('/datainservice', {
 		templateUrl: 'modules/dataInService/dataInService.html',
 		controller: 'disCntrl'
+	})
+	.when('/datainjson', {
+		templateUrl: 'modules/dataInJsonFile/dataInJson.html',
+		controller: 'dijCntrl'
 	});
 }]);
