@@ -1,5 +1,5 @@
-var dataInControllerCntrl = angular.module('dataInControllerCntrl', []);
-dataInControllerCntrl.controller('dicCntrl', ['$scope',function($scope){
+var dataInControllerCntrl = angular.module( 'dataInControllerCntrl', [] );
+dataInControllerCntrl.controller( 'dicCntrl', [ '$scope',function( $scope ) {
   $scope.charJson = [
     {
       "charId": "hs00001",
@@ -19,4 +19,4 @@ dataInControllerCntrl.controller('dicCntrl', ['$scope',function($scope){
       "charTitle": "Three-eyed Raven"
     }
   ];
-}]);
+} ] );
