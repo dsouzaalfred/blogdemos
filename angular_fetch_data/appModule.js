@@ -2,7 +2,8 @@ var fetchDataApp = angular.module( 'fetchDataApp', [
 	'ngRoute',
 	'dataInControllerCntrl',
 	'dataInServiceCntrl',
-	'dataInJsonCntrl'
+	'dataInJsonCntrl',
+  'apiCallCntrl'
 ] );
 fetchDataApp.config( [ '$routeProvider', function( $routeProvider ) {
 	$routeProvider.
@@ -17,5 +18,9 @@ fetchDataApp.config( [ '$routeProvider', function( $routeProvider ) {
 	.when( '/datainjson', {
 		templateUrl: 'modules/dataInJsonFile/dataInJson.html',
 		controller: 'dijCntrl'
-	} );
+	} )
+	.when( '/apicall', {
+ 		templateUrl: 'modules/apiCall/apiCall.html',
+ 		controller: 'acCntrl'
+ 	} );
 } ] );

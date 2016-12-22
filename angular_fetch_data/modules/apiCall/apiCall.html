@@ -1,27 +1,34 @@
-<h4>API call to get data</h4>
-<p>
-  <b>API end point</b>: http://swapi.co/api/starships/9/
-</p>
-<p>
-  <b>Details of starship 9</b>
-</p>
-<ul>
-  <li>
-    <b>Name : </b>charJson.name
-  </li>
-  <li>
-    <b>Model : </b>charJson.model
-  </li>
-  <li>
-    <b>Starship Class : </b>charJson.starship_class
-  </li>
-  <li>
-    <b>Cargo Capacity : </b>charJson.cargo_capacity
-  </li>
-  <li>
-    <b>Length : </b>charJson.length
-  </li>
-</ul>
-<pre>
-  {{ charJson | json: 4}}
-</pre>
+<div>
+  <h4>API call to get data</h4>
+  <p>
+    <b>API end point</b>: http://swapi.co/api/starships/9000/
+  </p>
+</div>
+<div ng-show="apiCall">
+  <b>Making API call...</b>
+</div>
+<div ng-if="apiSuccess" ng-show="!apiCall">
+  <p>
+    <b>Details of starship 9</b>
+  </p>
+  <ul>
+    <li>
+      <b>Name : </b>{{charJson.name}}
+    </li>
+    <li>
+      <b>Model : </b>{{charJson.model}}
+    </li>
+    <li>
+      <b>Starship Class : </b>{{charJson.starship_class}}
+    </li>
+    <li>
+      <b>Cargo Capacity : </b>{{charJson.cargo_capacity}}
+    </li>
+    <li>
+      <b>Length : </b>{{charJson.length}}
+    </li>
+  </ul>
+</div>
+<div ng-if="!apiSuccess" ng-show="!apiCall">
+  <b>Error : </b>{{charJson}}
+</div>
