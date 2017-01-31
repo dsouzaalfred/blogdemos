@@ -3,7 +3,8 @@ var fetchDataApp = angular.module( 'fetchDataApp', [
 	'dataInControllerCntrl',
 	'dataInServiceCntrl',
 	'dataInJsonCntrl',
-  'apiCallCntrl'
+  'apiCallCntrl',
+	'resolveCntrl'
 ] );
 fetchDataApp.config( [ '$routeProvider', function( $routeProvider ) {
 	$routeProvider.
@@ -22,5 +23,18 @@ fetchDataApp.config( [ '$routeProvider', function( $routeProvider ) {
 	.when( '/apicall', {
  		templateUrl: 'modules/apiCall/apiCall.html',
  		controller: 'acCntrl'
- 	} );
+ 	} )
+	.when( '/resolve', {
+		templateUrl: 'modules/resolve/resolve.html',
+		controller: 'rCntrl',
+		resolve: {
+			starshipData: ['rService', function( rService ) {
+				return rService.then( function( response ) {
+					return response;
+				}, function( response ) {
+					return response;
+				} )
+			} ]
+		}
+	} );
 } ] );

@@ -1,0 +1,29 @@
+<h4>Resolve</h4>
+<p>
+  <b>API end point</b>: http://swapi.co/api/starships/9/
+</p>
+<div ng-if="apiSuccess">
+  <p>
+    <b>Details of starship 9</b>
+  </p>
+  <ul>
+    <li>
+      <b>Name : </b>{{charJson.data.name}}
+    </li>
+    <li>
+      <b>Model : </b>{{charJson.data.model}}
+    </li>
+    <li>
+      <b>Starship Class : </b>{{charJson.data.starship_class}}
+    </li>
+    <li>
+      <b>Cargo Capacity : </b>{{charJson.data.cargo_capacity}}
+    </li>
+    <li>
+      <b>Length : </b>{{charJson.data.length}}
+    </li>
+  </ul>
+</div>
+<div ng-if="!apiSuccess">
+  <b>Error : </b>{{charJson}}
+</div>
