@@ -1,4 +1,4 @@
-#JSX - What is that
+# JSX - What is that
 
 This repo has all the code for the post *[JSX - What is that](https://dsouzaalf.red/blog/react/jsx-what-is-that/)*
 
