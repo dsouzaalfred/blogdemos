@@ -1,6 +1,6 @@
-# JSX - What is that
+# React - Props
 
-This repo has all the code for the post _[React - Props ](https://dsouzaalf.red/blog/react/react-props/)_
+This repo has all the code for the post _[React - Props](https://dsouzaalf.red/blog/react/react-props/)_
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
