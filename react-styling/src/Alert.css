@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.alert-success {
+  border: 1px solid green;
+  color: green;
+  background-color: greenyellow;
+}
+
+.alert-error {
+  border: 1px solid red;
+  color: red;
+  background-color: salmon;
+}
+
+.alert-warning {
+  border: 1px solid orange;
+  color: orange;
+  background-color: orangered;
+}

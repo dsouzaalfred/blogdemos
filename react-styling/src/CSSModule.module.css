@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  color: rgb(95, 158, 160);
+  font-size: 16px;
+}

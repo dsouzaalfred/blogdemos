@@ -1,0 +1,25 @@
+.wrapper {
+  background-color: antiquewhite;
+  padding: 15px;
+}
+
+.greenText {
+  color: green;
+}
+
+.multiple-properties {
+  padding: 20px;
+  margin: 20px 15px;
+  font-size: 2rem;
+  color: darkorange;
+  border: 1px solid darkgrey;
+}
+
+.active {
+  color: blue;
+  cursor: pointer;
+}
+
+.disabled {
+  color: grey;
+}
