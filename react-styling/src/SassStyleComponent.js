@@ -3,10 +3,10 @@ import './SassStyleComponent.scss';
 
 const SassStyleComponent = () => {
   return (
-    <div>
+    <div className="sass-wrapper">
       <ul>
         <li>
-          <a href="#">This is a link</a>
+          <a href="https://dsouzaalf.red/">This is a link</a>
         </li>
         <li>This is not a link</li>
       </ul>
